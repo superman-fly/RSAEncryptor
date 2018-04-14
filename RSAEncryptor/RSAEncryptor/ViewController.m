@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     NSString *content = @"hello word";
     
-    // 私钥签名 公钥解密
+    // 私钥签名 公钥验签
     NSString *signedString = [RSAEncryptor signString:content privateKey:private_key];
     NSLog(@"签名：%@",signedString);
     BOOL verify = [RSAEncryptor verifyString:content withSign:signedString publicKey:publick_key];
